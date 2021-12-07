@@ -2,25 +2,25 @@
 " Palette: {{{
 
 let g:bluemint#palette           = {}
-let g:bluemint#palette.fg        = ['#F8F8F2', 253]
+let g:bluemint#palette.fg        = ['#6db3b3',  73]
 
-let g:bluemint#palette.bglighter = ['#424450', 238]
-let g:bluemint#palette.bglight   = ['#343746', 237]
-let g:bluemint#palette.bg        = ['#282A36', 236]
-let g:bluemint#palette.bgdark    = ['#21222C', 235]
-let g:bluemint#palette.bgdarker  = ['#191A21', 234]
+let g:bluemint#palette.bglighter = ['#425050', 238]
+let g:bluemint#palette.bglight   = ['#334545', 237]
+let g:bluemint#palette.bg        = ['#283536', 236]
+let g:bluemint#palette.bgdark    = ['#212a2b', 235]
+let g:bluemint#palette.bgdarker  = ['#192121', 234]
 
-let g:bluemint#palette.comment   = ['#6272A4',  61]
-let g:bluemint#palette.selection = ['#44475A', 239]
-let g:bluemint#palette.subtle    = ['#424450', 238]
+let g:bluemint#palette.comment   = ['#005959',  23]
+let g:bluemint#palette.selection = ['#445959', 239]
+let g:bluemint#palette.subtle    = ['#414f4f', 238]
 
-let g:bluemint#palette.cyan      = ['#8BE9FD', 117]
-let g:bluemint#palette.green     = ['#50FA7B',  84]
-let g:bluemint#palette.orange    = ['#FFB86C', 215]
-let g:bluemint#palette.pink      = ['#FF79C6', 212]
-let g:bluemint#palette.purple    = ['#BD93F9', 141]
-let g:bluemint#palette.red       = ['#FF5555', 203]
-let g:bluemint#palette.yellow    = ['#F1FA8C', 228]
+let g:bluemint#palette.cyan      = ['#b3fff2', 159]
+let g:bluemint#palette.green     = ['#29c6ff',  39]
+let g:bluemint#palette.orange    = ['#524094',  54]
+let g:bluemint#palette.pink      = ['#9cffdb',  87]
+let g:bluemint#palette.purple    = ['#6eff86',  49]
+let g:bluemint#palette.red       = ['#5300e3',  57]
+let g:bluemint#palette.yellow    = ['#87ffb3', 122]
 
 "
 " ANSI

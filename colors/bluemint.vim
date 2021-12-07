@@ -116,9 +116,10 @@ hi! link CursorColumn CursorLine
 hi! link MoreMsg      BluemintFg
 hi! link NonText      BluemintSubtle
 hi! link TabLineFill  BluemintBgDark
-hi! link TabLineSel   BluemintRed
+hi! link TabLineSel   Normal
 hi! link TabLine      BluemintBoundary
 hi! link TabLineFill  BluemintBgDark
+hi! link Directory    BluemintYellow
 call s:h('LineNr', s:comment)
 call s:h('SignColumn', s:comment)
 
