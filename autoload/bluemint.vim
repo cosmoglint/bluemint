@@ -43,3 +43,14 @@ let g:bluemint#palette.color_14 = '#A4FFFF'
 let g:bluemint#palette.color_15 = '#FFFFFF'
 
 " }}}
+
+
+
+func! bluemint#should_abort(...)
+    if ! exists('g:colors_name') || g:colors_name !=# 'bluemint'
+        return 1
+    elseif a:0 > 0 && (! exists('b:current_syntax') || index(a:000, b:current_syntax) == -1)
+        return 1
+    endif
+    return 0
+endfunction
