@@ -39,11 +39,17 @@ function! s:h(scope, fg, ...)                                     " bg, attr_lis
   
 
   " to do add special characters support 
-  " to do add attributes support 
-  let l:hl_string = [                                             " this is just a new highlight  group which we create a list with the attributes and later execute it as a string
-    \ 'highlight', a:scope,                                       "  this is basically naming our new group with the name configured in function argument. checkout what the highlight function does with :help highlight
+  " to do add attributes support
+
+
+
+  " this is just a new highlight  group which we create a list with the attributes and later execute it as a string
+  " this is basically naming our new group with the name configured in function argument. checkout what the highlight function does with :help highlight
+
+  let l:hl_string = [
+    \ 'highlight', a:scope,
     \ 'guifg=' . l:fg[0], 'ctermfg=' . l:fg[1],
-    \ 'guibg=' . l:fg[0], 'ctermbg=' . l:fg[1],
+    \ 'guibg=' . l:bg[0], 'ctermbg=' . l:bg[1],
     \]
 
   execute join(l:hl_string, ' ')
@@ -51,13 +57,19 @@ endfunction
 
 " >>>
 
+if !exists('g:bluemint_colorterm')
+  let g:bluemint_colorterm = 1
+endif
 
 " HighlightGroups: <<<<
 
-call s:h('', s:none, s:bglight)                                  " set bglight color for empty spaces
+" call s:h('', s:none, s:bglight)                                  " set bglight color for empty spaces
 call s:h('BluemintBgLighter', s:none, s:bglighter)
-call s:h('BluemintBgDark', s:none, s:bgDark)
-call s:h('BluemintBgDarker', s:none, s:bgDarker)
+call s:h('BluemintBgDark', s:none, s:bgdark)
+call s:h('BluemintBgDarker', s:none, s:bgdarker)
+
+call s:h('BluemintComment', s:comment)
+
 
 call s:h('BluemintFg', s:fg, s:none)
 
@@ -81,13 +93,34 @@ call s:h('BluemintRed', s:red)
 
 call s:h('BluemintYellow', s:yellow)
 
-call s:h('BluemintRed', s:red)
-
-call s:h('BluemintRed', s:red)
+call s:h('BluemintBoundary', s:comment, s:bgdark)
 
 " >>>
 
 " UI Config: <<<
+
+set background=dark
+
+" some plugins may overwrite
+call s:h('Normal', s:fg, g:bluemint_colorterm || has('gui_running') ? s:bg : s:none )
+call s:h('StatusLine', s:none, s:bglighter, [s:none])
+call s:h('StatusLineNC', s:none, s:bglight)
+call s:h('StatusLineTerm', s:none, s:bglighter, [s:none])
+call s:h('StatusLineTermNC', s:none, s:bglight)
+call s:h('WildMenu', s:bg, s:purple, [s:none])
+call s:h('CursorLine', s:none, s:subtle)
+
+hi! link FoldColumn   BluemintSubtle
+hi! link ColorColumn  BluemintBgDark
+hi! link CursorColumn CursorLine
+hi! link MoreMsg      BluemintFg
+hi! link NonText      BluemintSubtle
+hi! link TabLineFill  BluemintBgDark
+hi! link TabLineSel   BluemintRed
+hi! link TabLine      BluemintBoundary
+hi! link TabLineFill  BluemintBgDark
+call s:h('LineNr', s:comment)
+call s:h('SignColumn', s:comment)
 
 hi! link ColorColumn        BluemintBgDark
 
@@ -133,7 +166,6 @@ hi! link Type               BluemintCyan
 hi! link Delimiter          BluemintFg            
 
 hi! link Special            BluemintPink          
-hi! link SpecialComment     BluemintCyanItalic                 
 hi! link Tag                BluemintCyan      
 hi! link helpHyperTextJump  BluemintLink                    
 hi! link helpCommand        BluemintPurple              
