@@ -15,7 +15,7 @@ let g:bluemint#palette.selection = ['#445959', 239]
 let g:bluemint#palette.subtle    = ['#414f4f', 238]
 
 let g:bluemint#palette.cyan      = ['#b3fff2', 159]
-let g:bluemint#palette.green     = ['#29c6ff',  39]
+let g:bluemint#palette.green     = ['#d1d1d1', 254]
 let g:bluemint#palette.orange    = ['#524094',  54]
 let g:bluemint#palette.pink      = ['#9cffdb',  87]
 let g:bluemint#palette.purple    = ['#6eff86',  49]
