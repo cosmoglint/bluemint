@@ -69,6 +69,8 @@ call s:h('BluemintBgDark', s:none, s:bgdark)
 call s:h('BluemintBgDarker', s:none, s:bgdarker)
 
 call s:h('BluemintComment', s:comment)
+call s:h('BluemintVisual', s:bgdark, s:green)
+
 
 
 call s:h('BluemintFg', s:fg, s:none)
@@ -111,6 +113,7 @@ call s:h('WildMenu', s:bg, s:purple, [s:none])
 call s:h('CursorLine', s:none, s:subtle)
 
 hi! link FoldColumn   BluemintSubtle
+hi! link Visual   BluemintVisual
 hi! link ColorColumn  BluemintBgDark
 hi! link CursorColumn CursorLine
 hi! link MoreMsg      BluemintFg
