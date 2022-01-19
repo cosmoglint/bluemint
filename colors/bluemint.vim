@@ -1,7 +1,8 @@
 scriptencoding utf8
 
-
 let g:colors_name = 'bluemint'
+""theme could be ragered no?
+
 
 
 " Palette: <<<
