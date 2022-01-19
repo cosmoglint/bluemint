@@ -1,8 +1,10 @@
 scriptencoding utf8
 
-
 let g:colors_name = 'bluemint'
-
+""theme could be ragered no?
+if g:mint_theme == 'ragered'
+  let g:bluemint#palette = g:ragered#palette
+endif
 
 " Palette: <<<
 let s:fg        = g:bluemint#palette.fg
