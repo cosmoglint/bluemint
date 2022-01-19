@@ -42,11 +42,9 @@ let g:bluemint#palette.color_13 = '#FF92DF'
 let g:bluemint#palette.color_14 = '#A4FFFF'
 let g:bluemint#palette.color_15 = '#FFFFFF'
 
-" }}}
-
-
-" bluemint palette"
-" Palette: {{{
+"
+"ragered
+"
 
 let g:ragered#palette           = {}
 let g:ragered#palette.fg        = [ "#544c4a", 230 ]
@@ -91,15 +89,12 @@ let g:ragered#palette.color_15 = '#FFFFFF'
 
 " }}}
 
+
 func! bluemint#should_abort(...)
     if ! exists('g:colors_name') || g:colors_name !=# 'bluemint'
         return 1
     elseif a:0 > 0 && (! exists('b:current_syntax') || index(a:000, b:current_syntax) == -1)
         return 1
-    elseif g:mint_theme == 'bluemint'
-        g:bluemint#palette = g:blumint#palette
-    elseif g:mint_theme == 'ragered'
-        g:bluemint#palette = g:ragered#palette
     endif
     return 0
 endfunction
